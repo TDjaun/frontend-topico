@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ENV } from '../env';
 
 interface MedicamentoEntregado {
   producto_id: string;
@@ -33,7 +34,7 @@ interface CreateAtencionPayload {
   providedIn: 'root'
 })
 export class AtencionesService {
-  private readonly baseUrl = 'http://localhost:3000'; 
+  private readonly baseUrl = ENV.HTTP; 
 
   constructor(private http: HttpClient) {}
 

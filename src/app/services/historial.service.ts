@@ -3,13 +3,14 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HistorialMappedDto, HistorialQueryParams } from '../models/historial.model';
 import { map } from 'rxjs/operators';
+import { ENV } from '../env';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class HistorialService { 
-  private readonly API_BASE_URL = 'http://localhost:3000/historial'; 
+  private readonly API_BASE_URL = ENV.HTTP+'/historial'; 
 
   constructor(private http: HttpClient) { }
 

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ENV } from '../env';
+
 
 export interface Categoria {
   id?: string;
@@ -15,7 +17,7 @@ export interface Categoria {
   providedIn: 'root',
 })
 export class CategoriasService {
-  private readonly apiUrl = 'http://localhost:3000/categorias';
+  private readonly apiUrl = ENV.HTTP+'/categorias';
 
   constructor(private http: HttpClient) {}
   listar(): Observable<Categoria[]> {
