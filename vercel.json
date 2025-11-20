@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/sistema-mariscal/server/server.mjs",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
-      "src": "/.*",
+      "src": "/(.*)", 
       "dest": "dist/sistema-mariscal/server/server.mjs"
     }
   ]
